@@ -1,4 +1,7 @@
-var nombre = prompt('Dime tu nombre porfa');
+import { Observable, Observer } from "rxjs";
 
-console.log("Hola " + nombre);
-alert("Hola " + nombre);
+const observer: Observer<string> = {
+    next: val => console.log('Siguiente: ', val),
+    error: err => console.warn('Error: ', err),
+    complete: () => console.info('Completado'),
+}
